@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://localhost:8100/?ionicplatform=ios&ionicstatusbarpadding=true -->
+<html lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- Ionic Dev Server: Injected Logger Script -->
+  <script>var IonicDevServerConfig={"sendConsoleLogs":false,"wsPort":53703,"appScriptsVersion":"1.3.7","systemInfo":["Ionic Framework: 3.3.0","Ionic App Scripts: 1.3.7","Angular Core: 4.1.2","Angular Compiler CLI: 4.1.2","Node: 6.9.5","OS Platform: macOS Sierra"]};</script>
+  <link href="./ion-dev.css" rel="stylesheet">
+  <script src="./ion-dev.js"></script>
+  
+  
+  <title>
+            Crypt
+        </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  
+  <link rel="manifest" href="http://localhost:8100/manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- cordova.js required for cordova apps -->
+  <script src="./cordova.js"></script>
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
+
+  <link href="./main.css" rel="stylesheet">
+  <link rel="stylesheet" href="./animate.min.css">
+  <!-- <link rel="stylesheet" href="build/animate.css"> -->
+
+<link rel="icon" type="image/png" href="data:image/png;base64,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"></head>
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app class="app-root app-root-ios ios platform-mobile platform-ios platform-mobileweb" ng-version="4.1.2"><div app-viewport=""></div><ng-component class="app-root"><ion-menu role="navigation" side="left" type="reveal" class="menu-enabled" ng-reflect-content="[object Object]"><div class="menu-inner">
+  <ion-header class="header header-ios">
+    <ion-toolbar class="toolbar toolbar-ios statusbar-padding"><div class="toolbar-background toolbar-background-ios" ng-reflect-klass="toolbar-background" ng-reflect-ng-class="toolbar-background-ios"></div><div class="toolbar-content toolbar-content-ios" ng-reflect-klass="toolbar-content" ng-reflect-ng-class="toolbar-content-ios">
+      <ion-title class="title title-ios"><div class="toolbar-title toolbar-title-ios" ng-reflect-klass="toolbar-title" ng-reflect-ng-class="toolbar-title-ios">Menu</div></ion-title>
+    </div></ion-toolbar>
+  </ion-header>
+
+  <ion-content class="content content-ios statusbar-padding"><div class="fixed-content"></div><div class="scroll-content">
+    <ion-list class="list list-ios">
+      <!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><button class="item item-block item-ios" ion-item="" menuclose="" ng-reflect-menu-close=""><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+        Home
+      </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></button><button class="item item-block item-ios" ion-item="" menuclose="" ng-reflect-menu-close=""><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+        List
+      </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></button>
+    </ion-list>
+  </div></ion-content>
+
+</div><ion-backdrop disable-activated="" role="presentation" tappable=""></ion-backdrop></ion-menu>
+
+
+<ion-nav swipebackenabled="false" class="menu-content menu-content-reveal" ng-reflect-swipe-back-enabled="false" ng-reflect-root="function HomePage(navCtrl, c) "><div nav-viewport=""></div><page-home class="ion-page show-page" style="z-index: 100;"><ion-header class="header header-ios">
+    <ion-navbar class="toolbar toolbar-ios toolbar-ios-primary statusbar-padding" color="primary" no-border="" ng-reflect-color="primary"><div class="toolbar-background toolbar-background-ios" ng-reflect-klass="toolbar-background" ng-reflect-ng-class="toolbar-background-ios"></div><button class="back-button disable-hover bar-button bar-button-ios back-button-ios bar-button-default bar-button-default-ios" ion-button="bar-button" ng-reflect-klass="back-button" ng-reflect-ng-class="back-button-ios"><span class="button-inner"><ion-icon class="back-button-icon icon icon-ios back-button-icon-ios ion-ios-arrow-back" role="img" ng-reflect-klass="back-button-icon" ng-reflect-ng-class="back-button-icon-ios" aria-label="arrow back" ng-reflect-name="ios-arrow-back"></ion-icon><span class="back-button-text back-button-text-ios" ng-reflect-klass="back-button-text" ng-reflect-ng-class="back-button-text-ios">Back</span></span><div class="button-effect"></div></button><div class="toolbar-content toolbar-content-ios" ng-reflect-klass="toolbar-content" ng-reflect-ng-class="toolbar-content-ios">
+        <ion-title class="title title-ios"><div class="toolbar-title toolbar-title-ios" ng-reflect-klass="toolbar-title" ng-reflect-ng-class="toolbar-title-ios">
+            Crypt
+        </div></ion-title>
+    </div></ion-navbar>
+</ion-header>
+
+<ion-content class="content content-ios statusbar-padding"><div class="fixed-content" style="margin-top: 64px;"></div><div class="scroll-content" style="margin-top: 64px;">
+
+    <ion-card class="cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            Recent Changes
+        </ion-card-header>
+        <ion-card-content class="card-content card-content-ios"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(2).html"></iframe>
+            <canvas basechart="" class="cryptCard" style="display: block; height: 300px; width: 319px;" width="638" height="318" ng-reflect-datasets="[object Object],[object Object" ng-reflect-labels="" ng-reflect-options="[object Object]" ng-reflect-chart-type="bar" ng-reflect-legend="true"></canvas>
+        </ion-card-content>
+    </ion-card>
+
+    
+
+    
+
+    
+
+    <!--bindings={
+  "ng-reflect-ng-for-of": "[object Object],[object Object"
+}--><ion-card class="animated fadeInUp pmtAnim cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            Bitcoin - (BTC)
+            <br>
+            <br> $2515.35
+        </ion-card-header>
+        <price-over-time><div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(3).html"></iframe>
+
+   <canvas basechart="" style="display: block; height: 175px; width: 351px;" width="702" height="350" ng-reflect-data="65,59,80,81,56,55,40,28,48,40," ng-reflect-labels="January,February,March,April,M" ng-reflect-chart-type="line"></canvas>
+ </div>
+ <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(4).html"></iframe>
+   <canvas basechart="" style="display: block; height: 351px; width: 351px;" width="702" height="702" ng-reflect-data="300,500,100" ng-reflect-labels="Download Sales,In-Store Sales," ng-reflect-chart-type="pie"></canvas>
+ </div>
+ <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+   <button style="display: inline-block">Toggle</button>
+ </div>
+</price-over-time>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            1h: -1.46%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            24h: 1.27%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            7d: 21.91%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+    </ion-card><ion-card class="animated fadeInUp pmtAnim cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            Ethereum - (ETH)
+            <br>
+            <br> $224.376
+        </ion-card-header>
+        <price-over-time><div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(5).html"></iframe>
+
+   <canvas basechart="" style="display: block; height: 175px; width: 351px;" width="702" height="350" ng-reflect-data="65,59,80,81,56,55,40,28,48,40," ng-reflect-labels="January,February,March,April,M" ng-reflect-chart-type="line"></canvas>
+ </div>
+ <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(6).html"></iframe>
+   <canvas basechart="" style="display: block; height: 351px; width: 351px;" width="702" height="702" ng-reflect-data="300,500,100" ng-reflect-labels="Download Sales,In-Store Sales," ng-reflect-chart-type="pie"></canvas>
+ </div>
+ <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+   <button style="display: inline-block">Toggle</button>
+ </div>
+</price-over-time>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            1h: 0.37%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            24h: 0.31%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            7d: 41.87%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+    </ion-card><ion-card class="animated fadeInUp pmtAnim cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            Ripple - (XRP)
+            <br>
+            <br> $0.29458
+        </ion-card-header>
+        <price-over-time><div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(7).html"></iframe>
+
+   <canvas basechart="" style="display: block; height: 175px; width: 351px;" width="702" height="350" ng-reflect-data="65,59,80,81,56,55,40,28,48,40," ng-reflect-labels="January,February,March,April,M" ng-reflect-chart-type="line"></canvas>
+ </div>
+ <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(8).html"></iframe>
+   <canvas basechart="" style="display: block; height: 351px; width: 351px;" width="702" height="702" ng-reflect-data="300,500,100" ng-reflect-labels="Download Sales,In-Store Sales," ng-reflect-chart-type="pie"></canvas>
+ </div>
+ <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+   <button style="display: inline-block">Toggle</button>
+ </div>
+</price-over-time>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            1h: 5.73%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            24h: -3.13%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            7d: 36.78%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+    </ion-card><ion-card class="animated fadeInUp pmtAnim cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            NEM - (XEM)
+            <br>
+            <br> $0.215075
+        </ion-card-header>
+        <price-over-time><div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(9).html"></iframe>
+
+   <canvas basechart="" style="display: block; height: 175px; width: 351px;" width="702" height="350" ng-reflect-data="65,59,80,81,56,55,40,28,48,40," ng-reflect-labels="January,February,March,April,M" ng-reflect-chart-type="line"></canvas>
+ </div>
+ <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(10).html"></iframe>
+   <canvas basechart="" style="display: block; height: 351px; width: 351px;" width="702" height="702" ng-reflect-data="300,500,100" ng-reflect-labels="Download Sales,In-Store Sales," ng-reflect-chart-type="pie"></canvas>
+ </div>
+ <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+   <button style="display: inline-block">Toggle</button>
+ </div>
+</price-over-time>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            1h: -0.8%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            24h: -5.97%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            7d: 8.5%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+    </ion-card><ion-card class="animated fadeInUp pmtAnim cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            Ethereum Classic - (ETC)
+            <br>
+            <br> $16.2808
+        </ion-card-header>
+        <price-over-time><div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(11).html"></iframe>
+
+   <canvas basechart="" style="display: block; height: 175px; width: 351px;" width="702" height="350" ng-reflect-data="65,59,80,81,56,55,40,28,48,40," ng-reflect-labels="January,February,March,April,M" ng-reflect-chart-type="line"></canvas>
+ </div>
+ <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(12).html"></iframe>
+   <canvas basechart="" style="display: block; height: 351px; width: 351px;" width="702" height="702" ng-reflect-data="300,500,100" ng-reflect-labels="Download Sales,In-Store Sales," ng-reflect-chart-type="pie"></canvas>
+ </div>
+ <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+   <button style="display: inline-block">Toggle</button>
+ </div>
+</price-over-time>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            1h: -0.6%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            24h: -6.42%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            7d: 1.87%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+    </ion-card><ion-card class="animated fadeInUp pmtAnim cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            Litecoin - (LTC)
+            <br>
+            <br> $27.661
+        </ion-card-header>
+        <price-over-time><div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(13).html"></iframe>
+
+   <canvas basechart="" style="display: block; height: 175px; width: 351px;" width="702" height="350" ng-reflect-data="65,59,80,81,56,55,40,28,48,40," ng-reflect-labels="January,February,March,April,M" ng-reflect-chart-type="line"></canvas>
+ </div>
+ <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(14).html"></iframe>
+   <canvas basechart="" style="display: block; height: 351px; width: 351px;" width="702" height="702" ng-reflect-data="300,500,100" ng-reflect-labels="Download Sales,In-Store Sales," ng-reflect-chart-type="pie"></canvas>
+ </div>
+ <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+   <button style="display: inline-block">Toggle</button>
+ </div>
+</price-over-time>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            1h: 0.36%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            24h: -4.66%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            7d: 15.29%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+    </ion-card><ion-card class="animated fadeInUp pmtAnim cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            Dash - (DASH)
+            <br>
+            <br> $144.295
+        </ion-card-header>
+        <price-over-time><div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(15).html"></iframe>
+
+   <canvas basechart="" style="display: block; height: 175px; width: 351px;" width="702" height="350" ng-reflect-data="65,59,80,81,56,55,40,28,48,40," ng-reflect-labels="January,February,March,April,M" ng-reflect-chart-type="line"></canvas>
+ </div>
+ <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(16).html"></iframe>
+   <canvas basechart="" style="display: block; height: 351px; width: 351px;" width="702" height="702" ng-reflect-data="300,500,100" ng-reflect-labels="Download Sales,In-Store Sales," ng-reflect-chart-type="pie"></canvas>
+ </div>
+ <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+   <button style="display: inline-block">Toggle</button>
+ </div>
+</price-over-time>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            1h: -0.25%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            24h: -0.24%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            7d: 41.75%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+    </ion-card><ion-card class="animated fadeInUp pmtAnim cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            Stratis - (STRAT)
+            <br>
+            <br> $9.37917
+        </ion-card-header>
+        <price-over-time><div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(17).html"></iframe>
+
+   <canvas basechart="" style="display: block; height: 175px; width: 351px;" width="702" height="350" ng-reflect-data="65,59,80,81,56,55,40,28,48,40," ng-reflect-labels="January,February,March,April,M" ng-reflect-chart-type="line"></canvas>
+ </div>
+ <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(18).html"></iframe>
+   <canvas basechart="" style="display: block; height: 351px; width: 351px;" width="702" height="702" ng-reflect-data="300,500,100" ng-reflect-labels="Download Sales,In-Store Sales," ng-reflect-chart-type="pie"></canvas>
+ </div>
+ <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+   <button style="display: inline-block">Toggle</button>
+ </div>
+</price-over-time>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            1h: -3.8%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            24h: 8.23%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            7d: 251.51%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+    </ion-card><ion-card class="animated fadeInUp pmtAnim cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            Monero - (XMR)
+            <br>
+            <br> $42.37
+        </ion-card-header>
+        <price-over-time><div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(19).html"></iframe>
+
+   <canvas basechart="" style="display: block; height: 175px; width: 351px;" width="702" height="350" ng-reflect-data="65,59,80,81,56,55,40,28,48,40," ng-reflect-labels="January,February,March,April,M" ng-reflect-chart-type="line"></canvas>
+ </div>
+ <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(20).html"></iframe>
+   <canvas basechart="" style="display: block; height: 351px; width: 351px;" width="702" height="702" ng-reflect-data="300,500,100" ng-reflect-labels="Download Sales,In-Store Sales," ng-reflect-chart-type="pie"></canvas>
+ </div>
+ <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+   <button style="display: inline-block">Toggle</button>
+ </div>
+</price-over-time>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            1h: -0.78%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            24h: -3.46%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            7d: 26.12%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+    </ion-card><ion-card class="animated fadeInUp pmtAnim cryptCard card card-ios">
+        <ion-card-header class="card-header card-header-ios">
+            Waves - (WAVES)
+            <br>
+            <br> $5.18762
+        </ion-card-header>
+        <price-over-time><div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(21).html"></iframe>
+
+   <canvas basechart="" style="display: block; height: 175px; width: 351px;" width="702" height="350" ng-reflect-data="65,59,80,81,56,55,40,28,48,40," ng-reflect-labels="January,February,March,April,M" ng-reflect-chart-type="line"></canvas>
+ </div>
+ <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="display: block; overflow: hidden; border: 0px; margin: 0px; top: 0px; left: 0px; bottom: 0px; right: 0px; height: 100%; width: 100%; position: absolute; pointer-events: none; z-index: -1;" src="./saved_resource(22).html"></iframe>
+   <canvas basechart="" style="display: block; height: 351px; width: 351px;" width="702" height="702" ng-reflect-data="300,500,100" ng-reflect-labels="Download Sales,In-Store Sales," ng-reflect-chart-type="pie"></canvas>
+ </div>
+ <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+   <button style="display: inline-block">Toggle</button>
+ </div>
+</price-over-time>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            1h: -1.85%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            24h: 12.5%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+        <ion-item class="listItem item item-block item-ios"><div class="item-inner"><div class="input-wrapper"><!--bindings={
+  "ng-reflect-ng-if": "true"
+}--><ion-label class="label label-ios">
+            7d: 127.97%
+        </ion-label></div><!--bindings={
+  "ng-reflect-ng-if": "false"
+}--></div><div class="button-effect"></div></ion-item>
+    </ion-card>
+
+</div></ion-content>
+</page-home><div class="nav-decor"></div></ion-nav></ng-component><div overlay-portal="" ng-reflect-_overlay-portal=""></div><div overlay-portal="" ng-reflect-_overlay-portal=""></div><div class="loading-portal" overlay-portal="" ng-reflect-_overlay-portal=""></div><div class="toast-portal" ng-reflect-_overlay-portal="10000"></div><div class="click-block click-block-enabled"></div></ion-app>
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="./polyfills.js"></script>
+
+  <!-- The bundle js is generated during the build process -->
+  <script src="./main.js"></script>
+
+  <!-- Ionic Dev Server: Injected LiveReload Script -->
+  <script src="./livereload.js" async="" defer=""></script>
+
+
+</body></html>

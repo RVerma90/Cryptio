@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-md-6">
+    <div style="display: block;">
+    <canvas baseChart width="400" height="400"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+    </div>
+  </div>
+    <button ion-button (click)="randomize()">CLICK</button>
+</div>
+
+
+
+<!-- <ion-card *ngFor="let c of currencies" class="animated fadeInUp pmtAnim cryptCard">
+    <ion-card-header>
+        {{c.name}} - ({{c.symbol}})
+        <br>
+        <br> ${{c.price_usd}}
+    </ion-card-header>
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: block;">
+        <canvas baseChart width="400" height="400"
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+        <button ion-button (click)="randomize()">CLICK</button>
+    </div>
+    <ion-item class="listItem">
+        1h: {{c.percent_change_1h}}%
+    </ion-item>
+    <ion-item class="listItem">
+        24h: {{c.percent_change_24h}}%
+    </ion-item>
+    <ion-item class="listItem">
+        7d: {{c.percent_change_7d}}%
+    </ion-item>
+</ion-card> -->
