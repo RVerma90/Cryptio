@@ -8,14 +8,62 @@
 
 <ion-content>
 
-    <ion-card class="cryptCard">
-        <ion-card-header (click)="test()">
-            Recent Changes
-        </ion-card-header>
-        <ion-card-content>
-            <canvas height="450" baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [legend]="chartLegend" [chartType]="chartType"></canvas>
-        </ion-card-content>
-    </ion-card>
+
+  <ion-slides>
+    <ion-slide>
+      <ion-card class="cryptCard">
+          <ion-card-header (click)="test()">
+              Recent Changes
+          </ion-card-header>
+          <ion-card-content>
+              <canvas height="450" baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [legend]="chartLegend" [chartType]="chartType"></canvas>
+          </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card *ngFor="let c of currencies" class="animated fadeInUp pmtAnim cryptCard">
+          <ion-card-header>
+              {{c.name}} - ({{c.symbol}}) - ${{c.price_usd}}
+          </ion-card-header>
+          <!-- <price-over-time>
+
+          </price-over-time> -->
+          <ion-row>
+              <ion-col width-25>
+                <!-- <button ion-button>{{c.percent_change_1h}}%</button> -->
+                  <ion-item class="listItem roundedEdgesLeft">
+                      {{c.percent_change_1h}}%
+                  </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <!-- <button ion-button>{{c.percent_change_24h}}%</button> -->
+                  <ion-item class="listItem">
+                      {{c.percent_change_24h}}%
+                  </ion-item>
+              </ion-col>
+              <ion-col width-25>
+                <!-- <button ion-button>{{c.percent_change_7d}}%</button> -->
+                  <ion-item class="listItem roundedEdgesRight">
+                      {{c.percent_change_7d}}%
+                  </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col width-50>
+                      <ion-item class="listItem roundedEdgesTop">
+                          Market Cap: ${{c.market_cap_usd}}
+                      </ion-item>
+                      <ion-item class="listItem roundedEdgesBottom">
+                            <ion-icon name="logo-bitcoin"></ion-icon> {{c.price_btc}}
+                      </ion-item>
+              </ion-col>
+          </ion-row>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+
+
 
     <!-- Bar charts finished -->
 
@@ -45,44 +93,6 @@
         </ion-row>
     </ion-grid> -->
 
-    <ion-card *ngFor="let c of currencies" class="animated fadeInUp pmtAnim cryptCard">
-        <ion-card-header>
-            {{c.name}} - ({{c.symbol}}) - ${{c.price_usd}}
-        </ion-card-header>
-        <!-- <price-over-time>
 
-        </price-over-time> -->
-        <ion-row>
-            <ion-col width-25>
-              <!-- <button ion-button>{{c.percent_change_1h}}%</button> -->
-                <ion-item class="listItem roundedEdgesLeft">
-                    {{c.percent_change_1h}}%
-                </ion-item>
-            </ion-col>
-            <ion-col width-25>
-              <!-- <button ion-button>{{c.percent_change_24h}}%</button> -->
-                <ion-item class="listItem">
-                    {{c.percent_change_24h}}%
-                </ion-item>
-            </ion-col>
-            <ion-col width-25>
-              <!-- <button ion-button>{{c.percent_change_7d}}%</button> -->
-                <ion-item class="listItem roundedEdgesRight">
-                    {{c.percent_change_7d}}%
-                </ion-item>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col width-50>
-                    <ion-item class="listItem roundedEdgesTop">
-                        Market Cap: ${{c.market_cap_usd}}
-                    </ion-item>
-                    <ion-item class="listItem roundedEdgesBottom">
-                          <ion-icon name="logo-bitcoin"></ion-icon> {{c.price_btc}}
-                    </ion-item>
-            </ion-col>
-        </ion-row>
-
-    </ion-card>
 
 </ion-content>
