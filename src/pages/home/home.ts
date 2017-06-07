@@ -12,6 +12,7 @@ import { Currencies } from '../../providers/currencies'
 })
 export class HomePage {
     // Bar Graph setting for ng-chart
+
     chartOptions: any = {
         scaleShowVerticalLines: false,
         responsive: true
@@ -34,7 +35,7 @@ export class HomePage {
     }
 
     ionViewDidLoad() {
-        // this.test()
+
     }
 
 
@@ -87,6 +88,8 @@ export class HomePage {
         });
         this.chartData = labelData;
 
+        this.getHistoricalData(labels);
+
     }
 
     getHistoricalData(labels) {
@@ -94,11 +97,6 @@ export class HomePage {
     }
 
     test() {
-        // console.log(this.currencies);
-        // console.log(this.chartLabels);
-
-        this.getHistoricalData(this.chartLabels);
-        let d = this.chartLabels;
 
     }
 

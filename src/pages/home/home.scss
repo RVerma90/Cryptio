@@ -1,36 +1,28 @@
 .ios,
 .md {
     page-home {
-        .scroll-content {
-            background: -webkit-linear-gradient(top,#222e54,#222e54);
-            /*Safari 5.1-6*/
-            background: -o-linear-gradient(top,#222e54,#222e54);
-            /*Opera 11.1-12*/
-            background: -moz-linear-gradient(top,#222e54,#222e54);
-            /*Fx 3.6-15*/
-            background: linear-gradient(to top, #222e54, #222e54);
-            /*Standard*/
-            // background-color: map-get($colors, primary);
-            // background-image: url('../assets/images/network.jpg');
-            // background-position: center;
-        }
-        // Header section of card is bold with slight transpacency
-        ion-card-header {
-            font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.5);
-            opacity: 1 !important;
-            text-align: center;
-        }
-        // Card shape is rounded with some transparency
-        .cryptCard {
-            background-color: rgba(256, 256, 256, 0.7);
-            border-radius: 15px;
-            // opacity: 0.7;
-        }
-
         .listItem {
             background-color: rgba(256, 256, 256, 0.3);
             text-align: center;
+        }
+
+        .roundedEdges {
+            border-radius: 0px 0px 15px 15px;
+        }
+        .roundedEdgesLeft {
+          border-radius: 15px 0px 0px 0px;
+        }
+
+        .roundedEdgesRight {
+          border-radius: 0px 15px 0px 0px;
+        }
+
+        .roundedEdgesTop {
+          border-radius: 0px 0px 0px 0px;
+        }
+
+        .roundedEdgesBottom {
+          border-radius: 0px 0px 15px 15px;
         }
     }
 }

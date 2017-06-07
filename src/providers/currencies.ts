@@ -45,11 +45,13 @@ export class Currencies {
 
 
     topCurrencies(cs) {
-      // console.log(cs);
-      // console.log(cs.length);
+
+      console.log('cs',cs);
+
         for (let i = 0; i < cs.length; i++) {
           let URL = this.urlHistoric + cs[i] + this.urlHistoric2;
           // console.log('current',cs[i]);
+          console.log(URL);
             return this.http.get(URL)
             .do(this.logResponse)
             // .map(this.extractData)
